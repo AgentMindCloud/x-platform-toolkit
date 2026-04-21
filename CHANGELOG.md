@@ -8,11 +8,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 
 - Initial repo scaffold with brand identity (grok-install family)
-- 5 LIVE tools shipped (vanilla JS, single-file):
+- 6 LIVE tools shipped (vanilla JS, single-file):
   - 04 Pre-Post Virality Scorer
   - 05 Pinned Post A/B Rotator
   - 07 Content Compound Calculator
   - 09 Engagement Quality Score
+  - 12 Controversy Detector
   - 18 Emotional Tone Trend Tracker
 - 14 SPEC'D tools with detailed implementation plans
 - Shared UI kit (tokens, components, shell template)
@@ -23,7 +24,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Notes
 
-- Tool 12 (Controversy Detector) was excluded from this release. Its scope requires inlining politically-charged keyword lists, which is better handled outside a general-purpose open source tool. Numbering is preserved (01–11, 13–20); folder 12 is intentionally absent.
+- Tool 12 (Controversy Detector) ships with empty default keyword lists. Users add their own niche-specific risk vocabulary via the in-UI "Edit keywords" control, which persists locally. The tool's value is the scoring framework and highlight UI, not a baked-in glossary — every niche has different risk vocabulary.
 
 ---
 

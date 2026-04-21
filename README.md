@@ -9,7 +9,7 @@
 <div align="center">
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-a855f7?style=for-the-badge&labelColor=000000)
-![Tools](https://img.shields.io/badge/Tools-19-22d3ee?style=for-the-badge&labelColor=000000)
+![Tools](https://img.shields.io/badge/Tools-20-22d3ee?style=for-the-badge&labelColor=000000)
 ![Status](https://img.shields.io/badge/Status-Active-a3e635?style=for-the-badge&labelColor=000000)
 ![X Compatible](https://img.shields.io/badge/X-Compatible-22d3ee?style=for-the-badge&labelColor=000000)
 ![Grok Powered](https://img.shields.io/badge/Grok-Powered-ec4899?style=for-the-badge&labelColor=000000)
@@ -40,6 +40,7 @@ X has 600M+ users and a public API. Yet the platform itself ships only ~10% of t
 | 09 | [Engagement Quality Score](tools/09-engagement-quality-score/) | Analytics | `Live` | Vanilla JS |
 | 10 | [Cross-Account Niche Benchmarker](tools/10-cross-account-niche-benchmarker/) | Analytics | `Spec'd` | Node + X API |
 | 11 | [Ghostwriter Mode with Memory](tools/11-ghostwriter-mode-with-memory/) | AI Writing | `Spec'd` | Node + Grok |
+| 12 | [Controversy Detector](tools/12-controversy-detector/) | AI Analytics | `Live` | Vanilla JS |
 | 13 | [Thread-to-Newsletter Converter](tools/13-thread-to-newsletter-converter/) | Automation | `Spec'd` | Node + Grok |
 | 14 | [Warm Introduction Mapper](tools/14-warm-introduction-mapper/) | Network | `Spec'd` | Node + X API |
 | 15 | [Spaces Recorder + Clips](tools/15-spaces-recorder-clips/) | Media | `Spec'd` | Node + FFmpeg |
