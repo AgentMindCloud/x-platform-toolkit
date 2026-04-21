@@ -1,0 +1,8 @@
+{
+  "name": "@x-platform-toolkit/grok-client",
+  "version": "0.1.0",
+  "description": "xAI Grok API wrapper for x-platform-toolkit",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=18" }
+}

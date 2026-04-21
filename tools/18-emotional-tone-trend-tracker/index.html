@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>18 · Emotional Tone Trend Tracker — x-platform-toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg-pure: #000000;
+  --bg-soft: #0a0a0f;
+  --bg-card: #111118;
+  --bg-elevated: #16161f;
+  --border-subtle: #1f1f2e;
+  --border-glow: rgba(34, 211, 238, 0.2);
+  --neon-cyan: #22d3ee;
+  --neon-purple: #a855f7;
+  --neon-magenta: #ec4899;
+  --neon-lime: #a3e635;
+  --neon-amber: #fbbf24;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --gradient-primary: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+  --gradient-magenta: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  --gradient-warm: linear-gradient(135deg, #ec4899 0%, #fbbf24 100%);
+  --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.15);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.15);
+  --glow-magenta: 0 0 20px rgba(236, 72, 153, 0.15);
+  --glow-lime: 0 0 20px rgba(163, 230, 53, 0.15);
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-pure);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scanlines { position: relative; }
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px);
+  pointer-events: none;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: 48px; margin-bottom: var(--space-4); }
+h2 { font-size: 32px; margin-bottom: var(--space-3); }
+h3 { font-size: 22px; margin-bottom: var(--space-2); }
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.brand-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
+}
+.brand-mark { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
+.brand-mark .icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  border: 1px solid var(--neon-cyan); border-radius: var(--radius-sm);
+  color: var(--neon-cyan); font-weight: 700;
+}
+.brand-mark .name {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; font-weight: 700;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 10px 18px; background: transparent;
+  border: 1px solid var(--neon-cyan); border-radius: var(--radius-md);
+  color: var(--neon-cyan); font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.btn:hover { background: rgba(34,211,238,0.08); box-shadow: var(--glow-cyan); }
+.btn-primary { background: var(--neon-cyan); color: var(--bg-pure); }
+.btn-primary:hover { background: var(--neon-cyan); box-shadow: var(--glow-cyan); filter: brightness(1.1); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; filter: none; box-shadow: none; }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--transition-base);
+}
+.card:hover { border-color: var(--border-glow); }
+
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px;
+  background: rgba(34,211,238,0.08);
+  border: 1px solid var(--neon-cyan); border-radius: var(--radius-sm);
+  color: var(--neon-cyan);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+.input, .textarea {
+  width: 100%; background: var(--bg-soft);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+  padding: 12px 14px; color: var(--text-primary);
+  font-family: var(--font-mono); font-size: 14px;
+  transition: all var(--transition-fast);
+}
+.input:focus, .textarea:focus { outline: none; border-color: var(--neon-cyan); box-shadow: var(--glow-cyan); }
+.textarea { min-height: 200px; resize: vertical; font-family: var(--font-mono); line-height: 1.55; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-subtle); }
+.table tr:hover td { background: var(--bg-elevated); }
+
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+.mono { font-family: var(--font-mono); }
+
+/* Layout */
+main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+.subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: var(--space-12); max-width: 720px; }
+
+.input-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: var(--space-4); gap: var(--space-4); flex-wrap: wrap;
+}
+.line-count { font-family: var(--font-mono); color: var(--text-secondary); font-size: 13px; }
+
+.results { margin-top: var(--space-12); display: none; flex-direction: column; gap: var(--space-6); }
+.results.show { display: flex; }
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: var(--space-6);
+}
+.chart-card { display: flex; flex-direction: column; }
+.chart-wrap { position: relative; width: 100%; flex: 1; min-height: 300px; }
+.donut-wrap { height: 300px; display: flex; align-items: center; justify-content: center; }
+.line-wrap { height: 300px; }
+
+.insights-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-3); }
+.insights-list li {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-soft); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono); font-size: 13px; color: var(--text-primary);
+}
+.insights-list .bullet {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--neon-cyan); flex-shrink: 0; margin-top: 8px;
+  box-shadow: 0 0 8px var(--neon-cyan);
+}
+.insights-list li:nth-child(2) .bullet { background: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.insights-list li:nth-child(3) .bullet { background: var(--neon-lime); box-shadow: 0 0 8px var(--neon-lime); }
+
+.table-card { overflow: hidden; }
+.table-scroll { overflow-x: auto; }
+.table-scroll .table { min-width: 640px; }
+
+.tone-pill {
+  display: inline-flex; align-items: center;
+  padding: 3px 8px; border-radius: var(--radius-sm);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  border: 1px solid currentColor;
+  background: rgba(255,255,255,0.03);
+}
+
+.section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-3); flex-wrap: wrap; gap: var(--space-2); }
+.section-head h3 { margin: 0; }
+.section-sub { color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; }
+
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-6) var(--space-6);
+  color: var(--text-muted); font-family: var(--font-mono); font-size: 12px;
+  text-align: center; margin-top: var(--space-16);
+}
+footer a { color: var(--text-secondary); text-decoration: none; }
+footer a:hover { color: var(--neon-cyan); }
+
+@media (max-width: 768px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
+  body { font-size: 14px; }
+  main { padding: 32px 16px; }
+  .charts-grid { grid-template-columns: 1fr; }
+  .donut-wrap, .line-wrap { height: 260px; }
+}
+</style>
+</head>
+<body>
+
+<header class="brand-bar">
+  <div class="brand-mark">
+    <span class="icon">18</span>
+    <span class="name">x-platform-toolkit</span>
+  </div>
+  <span class="badge">Tool 18</span>
+</header>
+
+<main>
+  <h1><span class="gradient-text">Emotional Tone Trend Tracker</span></h1>
+  <p class="subtitle">What's the emotional fingerprint of your X account? Paste a batch of posts and see the seven-tone breakdown, per-post trajectory, and plain-English insights.</p>
+
+  <section class="card">
+    <div class="section-head">
+      <h3>Your posts</h3>
+      <span class="section-sub">one per line · 5 minimum</span>
+    </div>
+    <textarea id="posts" class="textarea" placeholder="Paste 10–50 of your recent posts, one per line…"></textarea>
+    <div class="input-row">
+      <span class="line-count" id="lineCount">0 lines detected</span>
+      <button id="analyzeBtn" class="btn btn-primary" disabled>Analyze</button>
+    </div>
+  </section>
+
+  <section id="results" class="results">
+    <div class="charts-grid">
+      <div class="card chart-card">
+        <div class="section-head">
+          <h3>Distribution</h3>
+          <span class="section-sub">tones across posts</span>
+        </div>
+        <div class="donut-wrap"><canvas id="donutChart" width="300" height="300"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <div class="section-head">
+          <h3>Per-post trajectory</h3>
+          <span class="section-sub">dominant tone score · 0–1</span>
+        </div>
+        <div class="line-wrap"><canvas id="lineChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-head"><h3>Insights</h3></div>
+      <ul id="insights" class="insights-list"></ul>
+    </div>
+
+    <div class="card table-card">
+      <div class="section-head">
+        <h3>Per-post breakdown</h3>
+        <span class="section-sub">dominant · secondary · confidence</span>
+      </div>
+      <div class="table-scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Post excerpt</th>
+              <th>Dominant tone</th>
+              <th>Secondary tone</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody id="postTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Apache 2.0 · Part of the grok-install family · <a href="https://github.com/AgentMindCloud/x-platform-toolkit">github.com/AgentMindCloud/x-platform-toolkit</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const TONES = {
+  HOPEFUL:    { color: '#22d3ee', words: ['hope','future','possible','can','will','dream','vision','build','create','start','beginning','change','progress','growth','opportunity','breakthrough'] },
+  CYNICAL:    { color: '#52525b', words: ['never','useless','broken','fail','garbage','scam','hype','bs','lie','fake','cope','mid','trash','dead','nothing','doomed'] },
+  CURIOUS:    { color: '#a855f7', words: ['why','how','what if','wonder','interesting','question','explore','discover','curious','strange','unusual','hidden','mystery'] },
+  ANGRY:      { color: '#ec4899', words: ['stop','hate','ridiculous','absurd','insane','garbage','terrible','awful','disgusting','pathetic','infuriating','fed up','sick of'] },
+  INSPIRING:  { color: '#a3e635', words: ['powerful','amazing','beautiful','incredible','transform','breakthrough','achieve','succeed','overcome','courage','brave','strong'] },
+  ANALYTICAL: { color: '#60a5fa', words: ['data','analysis','study','research','evidence','suggest','indicate','correlation','pattern','framework','model','hypothesis','conclude'] },
+  PLAYFUL:    { color: '#fbbf24', words: ['lol','haha','funny','joke','ridiculous','weird','random','bizarre','hilarious','silly','plot twist','ngl','lowkey','fr'] }
+};
+const MIXED_COLOR = '#71717a';
+
+function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+function countMarkers(text, words) {
+  const lower = text.toLowerCase();
+  let count = 0;
+  for (const w of words) {
+    const re = new RegExp('\\b' + escapeRegex(w) + '\\b', 'g');
+    const matches = lower.match(re);
+    if (matches) count += matches.length;
+  }
+  return count;
+}
+
+function wordCount(text) {
+  const m = text.trim().match(/\b[\w']+\b/g);
+  return m ? m.length : 0;
+}
+
+function analyzePost(text) {
+  const wc = Math.max(wordCount(text), 1);
+  const scores = {};
+  for (const tone of Object.keys(TONES)) {
+    scores[tone] = countMarkers(text, TONES[tone].words) / wc;
+  }
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const top = sorted[0];
+  const second = sorted[1];
+
+  let dominant, secondary, confidence, dominantScore;
+  if (top[1] === 0) {
+    dominant = 'Mixed';
+    secondary = '—';
+    confidence = null;
+    dominantScore = 0;
+  } else {
+    const gap = (top[1] - second[1]) / Math.max(top[1], 0.0001);
+    if (gap < 0.1) {
+      dominant = 'Mixed';
+      secondary = second[0];
+      confidence = null;
+    } else {
+      dominant = top[0];
+      secondary = second[1] > 0 ? second[0] : '—';
+      confidence = Math.round(((top[1] - second[1]) / top[1]) * 100);
+    }
+    dominantScore = top[1];
+  }
+
+  return { text, scores, dominant, secondary, confidence, dominantScore, rawTop: top[0], wc };
+}
+
+function toneColor(tone) {
+  if (tone === 'Mixed' || tone === '—') return MIXED_COLOR;
+  return TONES[tone] ? TONES[tone].color : MIXED_COLOR;
+}
+
+function truncate(s, n) {
+  if (s.length <= n) return s;
+  return s.slice(0, n - 1).trimEnd() + '…';
+}
+
+function mode(arr) {
+  if (!arr.length) return null;
+  const counts = {};
+  for (const v of arr) counts[v] = (counts[v] || 0) + 1;
+  return Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+}
+
+function median(arr) {
+  if (!arr.length) return 0;
+  const s = [...arr].sort((a, b) => a - b);
+  const m = Math.floor(s.length / 2);
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}
+
+function buildInsights(results) {
+  const insights = [];
+
+  // 1. Dominant tone
+  const domCounts = {};
+  for (const r of results) domCounts[r.dominant] = (domCounts[r.dominant] || 0) + 1;
+  const sortedDom = Object.entries(domCounts).sort((a, b) => b[1] - a[1]);
+  const topTone = sortedDom[0][0];
+  const topPct = Math.round((sortedDom[0][1] / results.length) * 100);
+  insights.push(`Your dominant tone is ${topTone} — ${topPct}% of your posts.`);
+
+  // 2. Longest posts skew
+  const lens = results.map(r => r.wc);
+  const med = median(lens);
+  const longDom = results.filter(r => r.wc > med).map(r => r.dominant);
+  const shortDom = results.filter(r => r.wc <= med).map(r => r.dominant);
+  const longMode = mode(longDom);
+  const shortMode = mode(shortDom);
+  if (longMode && shortMode && longMode !== shortMode) {
+    insights.push(`Your longest posts skew ${longMode}.`);
+  } else {
+    insights.push(`Your posting tone is consistent across post lengths.`);
+  }
+
+  // 3. Tonal variety
+  const uniqueDom = new Set(results.map(r => r.dominant).filter(d => d !== 'Mixed'));
+  const u = uniqueDom.size;
+  let variety, observation;
+  if (u <= 1) {
+    variety = 'low';
+    observation = ' — one tone dominates. Easy to recognize, risky if it\'s cynical.';
+  } else if (u <= 3) {
+    variety = 'medium';
+    observation = ' — healthy mix. Recognizable voice with range.';
+  } else {
+    variety = 'high';
+    observation = ' — very varied. Strong range but less instantly recognizable.';
+  }
+  insights.push(`Tonal variety: ${variety}.` + observation);
+
+  return insights;
+}
+
+let donutChart = null;
+let lineChart = null;
+
+function renderDonut(results) {
+  const buckets = {};
+  for (const r of results) {
+    buckets[r.dominant] = (buckets[r.dominant] || 0) + 1;
+  }
+  const labels = Object.keys(buckets);
+  const data = labels.map(l => buckets[l]);
+  const colors = labels.map(toneColor);
+
+  const ctx = document.getElementById('donutChart').getContext('2d');
+  if (donutChart) donutChart.destroy();
+  donutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: colors,
+        borderColor: '#000000',
+        borderWidth: 2,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#a1a1aa',
+            font: { family: "'JetBrains Mono', monospace", size: 12 },
+            padding: 10,
+            boxWidth: 12,
+            boxHeight: 12
+          }
+        },
+        tooltip: {
+          backgroundColor: '#111118',
+          borderColor: '#1f1f2e',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          bodyColor: '#a1a1aa',
+          titleFont: { family: "'JetBrains Mono', monospace", size: 12 },
+          bodyFont: { family: "'JetBrains Mono', monospace", size: 12 },
+          callbacks: {
+            label: (c) => {
+              const total = c.dataset.data.reduce((a, b) => a + b, 0);
+              const pct = Math.round((c.parsed / total) * 100);
+              return ` ${c.label}: ${c.parsed} (${pct}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function renderLine(results) {
+  const labels = results.map((_, i) => String(i + 1));
+  const data = results.map(r => r.dominantScore);
+  const pointColors = results.map(r => toneColor(r.dominant));
+  const segmentColors = pointColors;
+
+  const ctx = document.getElementById('lineChart').getContext('2d');
+  if (lineChart) lineChart.destroy();
+
+  const maxVal = Math.max(...data, 0.1);
+  const yMax = Math.min(1, Math.ceil(maxVal * 10) / 10 + 0.05);
+
+  lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Dominant tone score',
+        data,
+        borderColor: '#22d3ee',
+        backgroundColor: 'rgba(34,211,238,0.08)',
+        fill: true,
+        tension: 0.35,
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        pointBackgroundColor: pointColors,
+        pointBorderColor: pointColors,
+        segment: {
+          borderColor: (c) => segmentColors[c.p1DataIndex] || '#22d3ee'
+        }
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#111118',
+          borderColor: '#1f1f2e',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          bodyColor: '#a1a1aa',
+          titleFont: { family: "'JetBrains Mono', monospace", size: 12 },
+          bodyFont: { family: "'JetBrains Mono', monospace", size: 12 },
+          callbacks: {
+            title: (items) => `Post #${items[0].label}`,
+            label: (c) => {
+              const r = results[c.dataIndex];
+              return ` ${r.dominant} · ${c.parsed.y.toFixed(3)}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
+          ticks: {
+            color: '#a1a1aa',
+            font: { family: "'JetBrains Mono', monospace", size: 11 }
+          },
+          title: {
+            display: true, text: 'Post index',
+            color: '#52525b',
+            font: { family: "'JetBrains Mono', monospace", size: 11 }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          max: yMax,
+          grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
+          ticks: {
+            color: '#a1a1aa',
+            font: { family: "'JetBrains Mono', monospace", size: 11 }
+          },
+          title: {
+            display: true, text: 'Normalized score',
+            color: '#52525b',
+            font: { family: "'JetBrains Mono', monospace", size: 11 }
+          }
+        }
+      }
+    }
+  });
+}
+
+function renderInsights(insights) {
+  const ul = document.getElementById('insights');
+  ul.innerHTML = '';
+  for (const text of insights) {
+    const li = document.createElement('li');
+    const bullet = document.createElement('span');
+    bullet.className = 'bullet';
+    const span = document.createElement('span');
+    span.textContent = text;
+    li.appendChild(bullet);
+    li.appendChild(span);
+    ul.appendChild(li);
+  }
+}
+
+function renderTable(results) {
+  const tbody = document.getElementById('postTable');
+  tbody.innerHTML = '';
+  results.forEach((r, i) => {
+    const tr = document.createElement('tr');
+
+    const tdIdx = document.createElement('td');
+    tdIdx.className = 'mono text-secondary';
+    tdIdx.textContent = String(i + 1);
+
+    const tdExcerpt = document.createElement('td');
+    tdExcerpt.textContent = truncate(r.text, 80);
+
+    const tdDom = document.createElement('td');
+    const pillD = document.createElement('span');
+    pillD.className = 'tone-pill';
+    pillD.style.color = toneColor(r.dominant);
+    pillD.textContent = r.dominant;
+    tdDom.appendChild(pillD);
+
+    const tdSec = document.createElement('td');
+    if (r.secondary === '—') {
+      tdSec.className = 'mono text-muted';
+      tdSec.textContent = '—';
+    } else {
+      const pillS = document.createElement('span');
+      pillS.className = 'tone-pill';
+      pillS.style.color = toneColor(r.secondary);
+      pillS.textContent = r.secondary;
+      tdSec.appendChild(pillS);
+    }
+
+    const tdConf = document.createElement('td');
+    tdConf.className = 'mono';
+    if (r.confidence === null) {
+      tdConf.classList.add('text-muted');
+      tdConf.textContent = '—';
+    } else {
+      tdConf.textContent = r.confidence + '%';
+    }
+
+    tr.appendChild(tdIdx);
+    tr.appendChild(tdExcerpt);
+    tr.appendChild(tdDom);
+    tr.appendChild(tdSec);
+    tr.appendChild(tdConf);
+    tbody.appendChild(tr);
+  });
+}
+
+function runAnalysis() {
+  const raw = document.getElementById('posts').value;
+  const lines = raw.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  if (lines.length < 5) return;
+  const results = lines.map(analyzePost);
+  renderDonut(results);
+  renderLine(results);
+  renderInsights(buildInsights(results));
+  renderTable(results);
+  document.getElementById('results').classList.add('show');
+}
+
+function updateLineCount() {
+  const raw = document.getElementById('posts').value;
+  const lines = raw.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  document.getElementById('lineCount').textContent = `${lines.length} lines detected`;
+  document.getElementById('analyzeBtn').disabled = lines.length < 5;
+}
+
+document.getElementById('posts').addEventListener('input', updateLineCount);
+document.getElementById('analyzeBtn').addEventListener('click', runAnalysis);
+updateLineCount();
+</script>
+</body>
+</html>
