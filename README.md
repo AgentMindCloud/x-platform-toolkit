@@ -33,7 +33,7 @@ X has 600M+ users and a public API. Yet the platform itself ships only ~10% of t
 | 02 | [Follower Intent Classifier](tools/02-follower-intent-classifier/) | Analytics | `Spec'd` | Node + X API + Grok |
 | 03 | [Contextual Reply Suggester](tools/03-contextual-reply-suggester/) | AI Writing | `Spec'd` | Grok |
 | 04 | [Pre-Post Virality Scorer](tools/04-pre-post-virality-scorer/) | AI Analytics | `Live` | Vanilla JS |
-| 05 | [Pinned Post A/B Rotator](tools/05-pinned-post-ab-rotator/) | Automation | `Spec'd` | Vanilla JS |
+| 05 | [Pinned Post A/B Rotator](tools/05-pinned-post-ab-rotator/) | Automation | `Live` | Vanilla JS |
 | 06 | [Digital Product Storefront](tools/06-digital-product-storefront/) | Monetization | `Spec'd` | Next.js + Firebase |
 | 07 | [Content Compound Calculator](tools/07-content-compound-calculator/) | Analytics | `Live` | Vanilla JS + Chart.js |
 | 08 | [Follow/Unfollow Velocity Map](tools/08-follow-unfollow-velocity-map/) | Analytics | `Spec'd` | Node + X API |

@@ -8,12 +8,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 
 - Initial repo scaffold with brand identity (grok-install family)
-- 4 LIVE tools shipped (vanilla JS, single-file):
+- 5 LIVE tools shipped (vanilla JS, single-file):
   - 04 Pre-Post Virality Scorer
+  - 05 Pinned Post A/B Rotator
   - 07 Content Compound Calculator
   - 09 Engagement Quality Score
   - 18 Emotional Tone Trend Tracker
-- 15 SPEC'D tools with detailed implementation plans
+- 14 SPEC'D tools with detailed implementation plans
 - Shared UI kit (tokens, components, shell template)
 - Shared X API v2 wrapper (`@x-platform-toolkit/x-api-client`)
 - Shared xAI Grok API wrapper (`@x-platform-toolkit/grok-client`)
@@ -23,7 +24,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ### Notes
 
 - Tool 12 (Controversy Detector) was excluded from this release. Its scope requires inlining politically-charged keyword lists, which is better handled outside a general-purpose open source tool. Numbering is preserved (01–11, 13–20); folder 12 is intentionally absent.
-- Tool 05 (Pinned Post A/B Rotator) is spec'd but not yet live — its initial implementation is queued for v0.2.0. See [tools/05-pinned-post-ab-rotator/SPEC.md](tools/05-pinned-post-ab-rotator/SPEC.md).
 
 ---
 
