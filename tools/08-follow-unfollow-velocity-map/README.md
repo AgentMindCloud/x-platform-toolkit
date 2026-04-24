@@ -1,5 +1,7 @@
 # 08 · Follow/Unfollow Velocity Map
 
+Category: Analytics
+
 > Timeline chart of every follow and unfollow, mapped to what you posted.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

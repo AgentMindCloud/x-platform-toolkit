@@ -1,5 +1,7 @@
 # 03 · Contextual Reply Suggester
 
+Category: AI Writing
+
 > Reply suggestions ranked by likelihood of follower gain.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

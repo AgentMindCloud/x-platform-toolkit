@@ -1,5 +1,7 @@
 # 09 · Engagement Quality Score
 
+Category: AI Writing
+
 > Weight your engagement properly. Replies are gold. Likes are dust.
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)

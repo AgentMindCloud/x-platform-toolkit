@@ -1,5 +1,7 @@
 # 12 · Controversy Detector
 
+Category: AI Writing
+
 > Flag risky phrasing before you post. Choose your battles.
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)

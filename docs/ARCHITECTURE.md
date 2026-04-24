@@ -16,7 +16,7 @@ x-platform-toolkit/
 Every tool folder is self-contained:
 
 - `README.md` — required, follows the shared template
-- `SPEC.md` — required for `Spec'd` status tools
+- `SPEC.md` — required for `Spec'd` status tools only. Live tools document their design inline in `README.md`.
 - `index.html` — for single-file frontend tools (LIVE)
 - `package.json` + `src/` — for Node-based tools
 - `.env.example` — for any tool requiring API keys

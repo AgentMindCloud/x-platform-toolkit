@@ -282,6 +282,14 @@
       width: 100%;
       height: 400px;
     }
+    .error {
+      color: var(--neon-magenta);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      text-align: center;
+      padding: var(--space-8) var(--space-4);
+      margin: 0;
+    }
     @media (max-width: 520px) {
       .chart-canvas-wrap { height: 300px; }
     }
@@ -480,10 +488,19 @@
     <p class="text-muted mono" style="font-size:12px; letter-spacing:0.1em;">APACHE 2.0  ·  PART OF THE GROK-INSTALL FAMILY</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"
+          onerror="window.__chartFailed=true"></script>
+  <script>
+    if (window.__chartFailed || typeof Chart === 'undefined') {
+      document.querySelector('.chart-wrap').innerHTML =
+        '<p class="error">Chart library failed to load. Check connection or disable blockers.</p>';
+    }
+  </script>
   <script>
     (function(){
       'use strict';
+
+      if (typeof Chart === 'undefined') return;
 
       const el = {
         postsWeek: document.getElementById('posts-week'),

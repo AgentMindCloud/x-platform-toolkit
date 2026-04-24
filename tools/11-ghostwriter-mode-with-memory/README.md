@@ -1,5 +1,7 @@
 # 11 · Ghostwriter Mode with Memory
 
+Category: AI Writing
+
 > AI writer that learns your voice from your last 500 posts.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

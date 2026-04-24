@@ -1,5 +1,7 @@
 # 06 · Digital Product Storefront
 
+Category: Monetization
+
 > Sell digital products from your X bio link in 2 minutes.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

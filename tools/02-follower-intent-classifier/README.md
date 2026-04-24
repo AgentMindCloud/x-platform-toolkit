@@ -1,5 +1,7 @@
 # 02 · Follower Intent Classifier
 
+Category: Analytics
+
 > Stop counting followers. Start understanding why they followed you.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

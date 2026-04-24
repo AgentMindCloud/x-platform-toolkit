@@ -1,5 +1,7 @@
 # 15 · Spaces Recorder + Clips
 
+Category: Media
+
 > Spaces shouldn't disappear. Record, transcribe, clip — automated.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

@@ -1,5 +1,7 @@
 # 18 · Emotional Tone Trend Tracker
 
+Category: Analytics
+
 > What's the emotional fingerprint of your X account?
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)

@@ -1,5 +1,7 @@
 # 16 · Follower Migration Assistant
 
+Category: Analytics
+
 > Pivoting your account? See who'll stay and who'll leave.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

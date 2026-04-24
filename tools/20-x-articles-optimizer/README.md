@@ -1,5 +1,7 @@
 # 20 · X Articles Optimizer
 
+Category: AI Writing
+
 > Your best thread is a half-written X Article. Let's complete it.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

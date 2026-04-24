@@ -1,5 +1,7 @@
 # 10 · Cross-Account Niche Benchmarker
 
+Category: Analytics
+
 > Stop wondering if your numbers are good. See how you stack against your niche.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

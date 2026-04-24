@@ -1,5 +1,7 @@
 # 01 · Thread Decay Tracker
 
+Category: Analytics
+
 > See which of your threads are still earning impressions days after you posted them.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

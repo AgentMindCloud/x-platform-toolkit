@@ -1,5 +1,7 @@
 # 13 · Thread-to-Newsletter Auto-Converter
 
+Category: Automation
+
 > Your thread is half a newsletter. Let's finish the job.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

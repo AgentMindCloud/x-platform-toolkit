@@ -181,6 +181,14 @@ main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
 .chart-wrap { position: relative; width: 100%; flex: 1; min-height: 300px; }
 .donut-wrap { height: 300px; display: flex; align-items: center; justify-content: center; }
 .line-wrap { height: 300px; }
+.error {
+  color: var(--neon-magenta);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  margin: 0;
+}
 
 .insights-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-3); }
 .insights-list li {
@@ -311,7 +319,14 @@ footer a:hover { color: var(--neon-cyan); }
   Apache 2.0 · Part of the grok-install family · <a href="https://github.com/AgentMindCloud/x-platform-toolkit">github.com/AgentMindCloud/x-platform-toolkit</a>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"
+        onerror="window.__chartFailed=true"></script>
+<script>
+  if (window.__chartFailed || typeof Chart === 'undefined') {
+    document.querySelector('.charts-grid').innerHTML =
+      '<p class="error">Chart library failed to load. Check connection or disable blockers.</p>';
+  }
+</script>
 <script>
 const TONES = {
   HOPEFUL:    { color: '#22d3ee', words: ['hope','future','possible','can','will','dream','vision','build','create','start','beginning','change','progress','growth','opportunity','breakthrough'] },
@@ -446,6 +461,7 @@ let donutChart = null;
 let lineChart = null;
 
 function renderDonut(results) {
+  if (typeof Chart === 'undefined') return;
   const buckets = {};
   for (const r of results) {
     buckets[r.dominant] = (buckets[r.dominant] || 0) + 1;
@@ -505,6 +521,7 @@ function renderDonut(results) {
 }
 
 function renderLine(results) {
+  if (typeof Chart === 'undefined') return;
   const labels = results.map((_, i) => String(i + 1));
   const data = results.map(r => r.dominantScore);
   const pointColors = results.map(r => toneColor(r.dominant));

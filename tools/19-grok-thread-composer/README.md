@@ -1,5 +1,7 @@
 # 19 · Grok Thread Composer
 
+Category: AI Writing
+
 > Write threads grounded in what's actually happening on X right now.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

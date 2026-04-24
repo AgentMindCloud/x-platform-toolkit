@@ -1,5 +1,7 @@
 # 14 · Warm Introduction Mapper
 
+Category: Network
+
 > Find the shortest follow chain to anyone on X.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

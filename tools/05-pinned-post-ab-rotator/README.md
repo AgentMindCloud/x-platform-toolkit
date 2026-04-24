@@ -1,5 +1,7 @@
 # 05 · Pinned Post A/B Rotator
 
+Category: Analytics
+
 > Rotate your pinned post on a schedule. Find your best converter.
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)

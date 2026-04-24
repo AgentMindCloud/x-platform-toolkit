@@ -1,5 +1,7 @@
 # 17 · Post Necromancer
 
+Category: AI Automation
+
 > Your old posts had good ideas. Reincarnate them with today's vocabulary.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)

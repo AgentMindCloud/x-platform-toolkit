@@ -1,5 +1,7 @@
 # 04 · Pre-Post Virality Scorer
 
+Category: Analytics
+
 > Score your draft post before you hit send.
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)

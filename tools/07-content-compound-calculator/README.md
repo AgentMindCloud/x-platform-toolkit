@@ -1,5 +1,7 @@
 # 07 · Content Compound Calculator
 
+Category: Analytics
+
 > See your true cumulative reach over 12 months. Not just one-day impressions.
 
 ![Status](https://img.shields.io/badge/Status-Live-a3e635?style=for-the-badge&labelColor=000000)
