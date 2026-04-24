@@ -11,7 +11,7 @@ test('request() sets Authorization + JSON content type, decodes JSON response', 
     assert.deepEqual(json, { ok: true, echo: 'hi' });
 
     const [{ url, init }] = restore.calls;
-    assert.equal(url, 'https://api.twitter.com/2/ping');
+    assert.equal(url, 'https://api.x.com/2/ping');
     assert.equal(init.headers.Authorization, 'Bearer AAAA-test');
     assert.equal(init.headers['Content-Type'], 'application/json');
   } finally {

@@ -11,7 +11,7 @@
  * want — see docs/cors.md. Prefer a serverless proxy and call that.
  */
 
-const API_BASE = 'https://api.twitter.com/2';
+const API_BASE = 'https://api.x.com/2';
 
 export default class XApiClient {
   constructor({ bearerToken, baseURL = API_BASE } = {}) {

@@ -13,7 +13,7 @@ test('getUserByUsername() hits the right URL and returns decoded body', async ()
     assert.equal(res.data.username, 'elonmusk');
 
     const url = restore.calls[0].url;
-    assert.ok(url.startsWith('https://api.twitter.com/2/users/by/username/elonmusk?'));
+    assert.ok(url.startsWith('https://api.x.com/2/users/by/username/elonmusk?'));
     assert.ok(url.includes('user.fields=public_metrics'));
     assert.ok(url.includes('description'));
     assert.ok(url.includes('created_at'));
@@ -28,7 +28,7 @@ test('getUserTweets() sends max_results and tweet.fields in the query string', a
     const client = new XApiClient({ bearerToken: 'AAAA-test' });
     await client.getUserTweets('12345', { maxResults: 50 });
     const url = restore.calls[0].url;
-    assert.ok(url.startsWith('https://api.twitter.com/2/users/12345/tweets?'));
+    assert.ok(url.startsWith('https://api.x.com/2/users/12345/tweets?'));
     assert.ok(url.includes('max_results=50'));
     assert.ok(url.includes('tweet.fields=public_metrics'));
     assert.ok(url.includes('conversation_id'));
@@ -43,7 +43,7 @@ test('getTweet() hits the /tweets/:id endpoint with expected fields', async () =
     const client = new XApiClient({ bearerToken: 'AAAA-test' });
     await client.getTweet('999');
     const url = restore.calls[0].url;
-    assert.ok(url.startsWith('https://api.twitter.com/2/tweets/999?'));
+    assert.ok(url.startsWith('https://api.x.com/2/tweets/999?'));
     assert.ok(url.includes('tweet.fields=public_metrics'));
   } finally {
     restore();
