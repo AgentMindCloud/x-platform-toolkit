@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^https://img\\.shields\\.io/" },
+    { "pattern": "^https://capsule-render\\.vercel\\.app/" },
+    { "pattern": "^https://readme-typing-svg\\.demolab\\.com" },
+    { "pattern": "^https://x\\.com/" },
+    { "pattern": "^https://www\\.jansolos\\.com" }
+  ],
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "5s",
+  "aliveStatusCodes": [200, 206, 301, 302, 303, 307, 308]
+}
