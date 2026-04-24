@@ -203,6 +203,8 @@ Issues, tool requests, and PRs all welcome. Start with [`CONTRIBUTING.md`](CONTR
 
 ## ✦ Sibling Repos
 
+**grok-install family:** a set of open-source repos building shared infrastructure for Grok-native agents — a YAML spec, a CLI, templates, a marketplace, a runtime, and docs. `x-platform-toolkit` is the product layer on top.
+
 <table>
   <tr>
     <td width="33%">

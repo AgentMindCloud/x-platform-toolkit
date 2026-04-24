@@ -53,9 +53,9 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Check README and docs links
+      - name: Check README, SECURITY, and docs links
         run: |
-          for f in README.md docs/*.md; do
+          for f in README.md SECURITY.md docs/*.md; do
             echo "Checking $f"
             npx markdown-link-check --config .markdown-link-check.json "$f"
           done
