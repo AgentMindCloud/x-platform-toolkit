@@ -2,7 +2,11 @@
   "name": "@x-platform-toolkit/x-api-client",
   "version": "0.1.0",
   "description": "Shared X API v2 wrapper for x-platform-toolkit",
-  "main": "src/index.js",
   "license": "Apache-2.0",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "engines": { "node": ">=18" }
 }

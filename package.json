@@ -1,0 +1,24 @@
+{
+  "name": "@x-platform-toolkit/root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo root for x-platform-toolkit — 20 tools, shared UI kit, X + Grok clients.",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "shared/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3"
+  }
+}
