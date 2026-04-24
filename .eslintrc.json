@@ -25,7 +25,27 @@
   },
   "overrides": [
     {
-      "files": ["shared/grok-client/**/*.js", "shared/x-api-client/**/*.js"],
+      "files": [
+        "shared/grok-client/browser.js",
+        "shared/x-api-client/browser.js",
+        "shared/test-utils/**/*.js"
+      ],
+      "parserOptions": { "sourceType": "module" },
+      "env": { "browser": true, "node": true }
+    },
+    {
+      "files": [
+        "shared/grok-client/test/**/*.js",
+        "shared/x-api-client/test/**/*.js"
+      ],
+      "parserOptions": { "sourceType": "module" },
+      "env": { "node": true, "browser": false }
+    },
+    {
+      "files": [
+        "shared/grok-client/src/**/*.js",
+        "shared/x-api-client/src/**/*.js"
+      ],
       "parserOptions": { "sourceType": "script" },
       "env": { "node": true, "browser": false }
     }

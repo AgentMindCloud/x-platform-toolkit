@@ -1,32 +1,25 @@
 /**
- * grok-client — xAI Grok API wrapper for x-platform-toolkit
+ * grok-client — browser / ESM entry for x-platform-toolkit.
  * Part of the grok-install family · Apache 2.0
  *
- * Node (CommonJS) entry. For browser / ESM, import '@x-platform-toolkit/grok-client/browser'.
+ * Import only from a bundler context (Vite / esbuild / Rollup / Webpack).
+ * Node consumers should import the package's main CJS entry instead.
+ *
+ * No `process.env`, no node-only APIs. Constructor requires `apiKey`.
  */
 
 const API_BASE = 'https://api.x.ai/v1';
 
-class GrokClient {
+export default class GrokClient {
   constructor({ apiKey, model = 'grok-2-latest', baseURL = API_BASE } = {}) {
-    this.apiKey = apiKey || process.env.XAI_API_KEY;
+    if (!apiKey) {
+      throw new Error('apiKey is required. Pass it explicitly — browser builds never read env vars.');
+    }
+    this.apiKey = apiKey;
     this.model = model;
     this.baseURL = baseURL;
-    if (!this.apiKey) {
-      throw new Error('XAI_API_KEY required. Set env var or pass apiKey option.');
-    }
   }
 
-  /**
-   * chat(messages, opts)
-   *
-   * Non-streaming chat completion.
-   *
-   * When `opts.tools` is omitted: returns the assistant's string `content`
-   *   (preserves the original signature).
-   * When `opts.tools` is provided: returns `{ content, tool_calls }` so
-   *   callers can dispatch on either.
-   */
   async chat(messages, { temperature = 0.7, maxTokens = 1024, tools, toolChoice } = {}) {
     const body = {
       model: this.model,
@@ -64,16 +57,6 @@ class GrokClient {
     return this.chat([{ role: 'user', content: prompt }], options);
   }
 
-  /**
-   * chatStream(messages, opts)
-   *
-   * Streaming chat completion. Async generator yielding content tokens
-   * (strings) in order. Terminates when the server emits `data: [DONE]`.
-   *
-   * Note: this generator yields assistant `delta.content` only. Streaming
-   * tool_calls deltas are not decoded here — use the non-streaming
-   * `chat({ tools })` path for tool-use.
-   */
   async *chatStream(messages, { temperature = 0.7, maxTokens = 1024 } = {}) {
     const res = await fetch(`${this.baseURL}/chat/completions`, {
       method: 'POST',
@@ -137,5 +120,3 @@ class GrokClient {
     }
   }
 }
-
-module.exports = GrokClient;
