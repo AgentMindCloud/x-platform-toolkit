@@ -110,6 +110,7 @@ tr:hover td{background:var(--bg-elevated)}
   <div class="disclaimer">This tool tracks and recommends. You manually update your pinned post on X each rotation.</div>
 </main>
 <footer style="border-top:1px solid var(--border-subtle);padding:24px;text-align:center;margin-top:64px">
+  <button class="btn btn-magenta" id="clearDataBtn" style="margin-bottom:16px">Clear all data</button>
   <p class="text-muted mono" style="font-size:12px;letter-spacing:0.1em">APACHE 2.0  ·  PART OF THE GROK-INSTALL FAMILY</p>
 </footer>
 <script>
@@ -321,6 +322,12 @@ function render(){
 
 document.getElementById('intervalSelect').addEventListener('change', (e) => changeInterval(e.target.value));
 document.getElementById('exportBtn').addEventListener('click', doExport);
+document.getElementById('clearDataBtn').addEventListener('click', () => {
+  if (confirm('Clear all data? This will wipe every candidate, rotation, and result. This cannot be undone.')) {
+    localStorage.clear();
+    location.reload();
+  }
+});
 
 render();
 if (state.activeId && state.nextSwapAt) startCountdown();

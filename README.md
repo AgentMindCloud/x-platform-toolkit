@@ -24,7 +24,8 @@
   <img src="https://img.shields.io/badge/20%20Tools-7C3AED?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
   <img src="https://img.shields.io/badge/Status%20Active-FF4FD8?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
   <img src="https://img.shields.io/badge/X%20Compatible-00D5FF?style=for-the-badge&logo=x&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Grok%20Powered-9D4EDD?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
+  <img src="https://img.shields.io/badge/Heuristic%20Live-A3E635?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
+  <img src="https://img.shields.io/badge/Grok--Compatible-9D4EDD?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
   <img src="https://img.shields.io/badge/Family%20grok--install-5EF2FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
 </p>
 
@@ -104,28 +105,28 @@ This toolkit fills the gap. Every tool here works with public X data, the offici
 
 ## ✦ The 20 Tools
 
-| # | Tool | Category | Status | Stack |
-|---|---|---|---|---|
-| 01 | [Thread Decay Tracker](tools/01-thread-decay-tracker/) | Analytics | `Spec'd` | Node + X API |
-| 02 | [Follower Intent Classifier](tools/02-follower-intent-classifier/) | Analytics | `Spec'd` | Node + X API + Grok |
-| 03 | [Contextual Reply Suggester](tools/03-contextual-reply-suggester/) | AI Writing | `Spec'd` | Grok |
-| 04 | [Pre-Post Virality Scorer](tools/04-pre-post-virality-scorer/) | AI Analytics | `Live` | Vanilla JS |
-| 05 | [Pinned Post A/B Rotator](tools/05-pinned-post-ab-rotator/) | Automation | `Live` | Vanilla JS |
-| 06 | [Digital Product Storefront](tools/06-digital-product-storefront/) | Monetization | `Spec'd` | Next.js + Firebase |
-| 07 | [Content Compound Calculator](tools/07-content-compound-calculator/) | Analytics | `Live` | Vanilla JS + Chart.js |
-| 08 | [Follow/Unfollow Velocity Map](tools/08-follow-unfollow-velocity-map/) | Analytics | `Spec'd` | Node + X API |
-| 09 | [Engagement Quality Score](tools/09-engagement-quality-score/) | Analytics | `Live` | Vanilla JS |
-| 10 | [Cross-Account Niche Benchmarker](tools/10-cross-account-niche-benchmarker/) | Analytics | `Spec'd` | Node + X API |
-| 11 | [Ghostwriter Mode with Memory](tools/11-ghostwriter-mode-with-memory/) | AI Writing | `Spec'd` | Node + Grok |
-| 12 | [Controversy Detector](tools/12-controversy-detector/) | AI Analytics | `Live` | Vanilla JS |
-| 13 | [Thread-to-Newsletter Converter](tools/13-thread-to-newsletter-converter/) | Automation | `Spec'd` | Node + Grok |
-| 14 | [Warm Introduction Mapper](tools/14-warm-introduction-mapper/) | Network | `Spec'd` | Node + X API |
-| 15 | [Spaces Recorder + Clips](tools/15-spaces-recorder-clips/) | Media | `Spec'd` | Node + FFmpeg |
-| 16 | [Follower Migration Assistant](tools/16-follower-migration-assistant/) | Analytics | `Spec'd` | Node + Grok |
-| 17 | [Post Necromancer](tools/17-post-necromancer/) | AI Automation | `Spec'd` | Node + Grok |
-| 18 | [Emotional Tone Trend Tracker](tools/18-emotional-tone-trend-tracker/) | AI Analytics | `Live` | Vanilla JS + Chart.js |
-| 19 | [Grok Thread Composer](tools/19-grok-thread-composer/) | AI Writing (xAI) | `Spec'd` | Grok |
-| 20 | [X Articles Optimizer](tools/20-x-articles-optimizer/) | AI Writing | `Spec'd` | Grok |
+| # | Tool | Category | Status | Badge | Stack |
+|---|---|---|---|---|---|
+| 01 | [Thread Decay Tracker](tools/01-thread-decay-tracker/) | Analytics | `Spec'd` | `Grok-Compatible` | Node + X API |
+| 02 | [Follower Intent Classifier](tools/02-follower-intent-classifier/) | Analytics | `Spec'd` | `Grok-Compatible` | Node + X API + Grok |
+| 03 | [Contextual Reply Suggester](tools/03-contextual-reply-suggester/) | AI Writing | `Spec'd` | `Grok-Compatible` | Grok |
+| 04 | [Pre-Post Virality Scorer](tools/04-pre-post-virality-scorer/) | AI Analytics | `Live` | `Heuristic Live` | Vanilla JS |
+| 05 | [Pinned Post A/B Rotator](tools/05-pinned-post-ab-rotator/) | Automation | `Live` | `Heuristic Live` | Vanilla JS |
+| 06 | [Digital Product Storefront](tools/06-digital-product-storefront/) | Monetization | `Spec'd` | `Grok-Compatible` | Next.js + Firebase |
+| 07 | [Content Compound Calculator](tools/07-content-compound-calculator/) | Analytics | `Live` | `Heuristic Live` | Vanilla JS + Chart.js |
+| 08 | [Follow/Unfollow Velocity Map](tools/08-follow-unfollow-velocity-map/) | Analytics | `Spec'd` | `Grok-Compatible` | Node + X API |
+| 09 | [Engagement Quality Score](tools/09-engagement-quality-score/) | Analytics | `Live` | `Heuristic Live` | Vanilla JS |
+| 10 | [Cross-Account Niche Benchmarker](tools/10-cross-account-niche-benchmarker/) | Analytics | `Spec'd` | `Grok-Compatible` | Node + X API |
+| 11 | [Ghostwriter Mode with Memory](tools/11-ghostwriter-mode-with-memory/) | AI Writing | `Spec'd` | `Grok-Compatible` | Node + Grok |
+| 12 | [Controversy Detector](tools/12-controversy-detector/) | AI Analytics | `Live` | `Heuristic Live` | Vanilla JS |
+| 13 | [Thread-to-Newsletter Converter](tools/13-thread-to-newsletter-converter/) | Automation | `Spec'd` | `Grok-Compatible` | Node + Grok |
+| 14 | [Warm Introduction Mapper](tools/14-warm-introduction-mapper/) | Network | `Spec'd` | `Grok-Compatible` | Node + X API |
+| 15 | [Spaces Recorder + Clips](tools/15-spaces-recorder-clips/) | Media | `Spec'd` | `Grok-Compatible` | Node + FFmpeg |
+| 16 | [Follower Migration Assistant](tools/16-follower-migration-assistant/) | Analytics | `Spec'd` | `Grok-Compatible` | Node + Grok |
+| 17 | [Post Necromancer](tools/17-post-necromancer/) | AI Automation | `Spec'd` | `Grok-Compatible` | Node + Grok |
+| 18 | [Emotional Tone Trend Tracker](tools/18-emotional-tone-trend-tracker/) | AI Analytics | `Live` | `Heuristic Live` | Vanilla JS + Chart.js |
+| 19 | [Grok Thread Composer](tools/19-grok-thread-composer/) | AI Writing (xAI) | `Spec'd` | `Grok-Compatible` | Grok |
+| 20 | [X Articles Optimizer](tools/20-x-articles-optimizer/) | AI Writing | `Spec'd` | `Grok-Compatible` | Grok |
 
 ## ✦ Quick Start
 
@@ -207,34 +208,34 @@ Issues, tool requests, and PRs all welcome. Start with [`CONTRIBUTING.md`](CONTR
     <td width="33%">
       <h3>📦 grok-install</h3>
       <p>The universal YAML spec for Grok-native agents.</p>
-      <a href="https://github.com/agentmindcloud/grok-install">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/grok-install">Repository →</a>
     </td>
     <td width="33%">
       <h3>⚙️ grok-install-cli</h3>
       <p>The CLI for shipping Grok agents from YAML.</p>
-      <a href="https://github.com/agentmindcloud/grok-install-cli">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/grok-install-cli">Repository →</a>
     </td>
     <td width="33%">
       <h3>🌟 awesome-grok-agents</h3>
       <p>10 certified agent templates, end-to-end runnable.</p>
-      <a href="https://github.com/agentmindcloud/awesome-grok-agents">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/awesome-grok-agents">Repository →</a>
     </td>
   </tr>
   <tr>
     <td>
       <h3>🛒 grok-agents-marketplace</h3>
       <p>The live marketplace at <a href="https://grokagents.dev">grokagents.dev</a>.</p>
-      <a href="https://github.com/agentmindcloud/grok-agents-marketplace">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/grok-agents-marketplace">Repository →</a>
     </td>
     <td>
       <h3>🎭 grok-agent-orchestra</h3>
       <p>Multi-agent runtime with mandatory safety veto.</p>
-      <a href="https://github.com/agentmindcloud/grok-agent-orchestra">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/grok-agent-orchestra">Repository →</a>
     </td>
     <td>
       <h3>📚 grok-docs</h3>
       <p>Full documentation site.</p>
-      <a href="https://github.com/agentmindcloud/grok-docs">Repository →</a>
+      <a href="https://github.com/AgentMindCloud/grok-docs">Repository →</a>
     </td>
   </tr>
 </table>
@@ -242,7 +243,7 @@ Issues, tool requests, and PRs all welcome. Start with [`CONTRIBUTING.md`](CONTR
 ## ✦ Connect
 
 <p align="center">
-  <a href="https://github.com/agentmindcloud">
+  <a href="https://github.com/AgentMindCloud">
     <img src="https://img.shields.io/badge/GitHub-00E5FF?style=for-the-badge&logo=github&logoColor=001018&labelColor=0A0D14" />
   </a>
   <a href="https://x.com/JanSol0s">

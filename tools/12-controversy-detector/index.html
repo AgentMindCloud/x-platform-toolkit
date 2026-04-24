@@ -442,6 +442,35 @@ footer {
   font-size: 12px;
   letter-spacing: 0.1em;
 }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  border-radius: var(--radius-md);
+  color: var(--neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.btn:hover {
+  background: rgba(34, 211, 238, 0.08);
+  box-shadow: var(--glow-cyan);
+}
+.btn-danger {
+  border-color: var(--neon-magenta);
+  color: var(--neon-magenta);
+}
+.btn-danger:hover {
+  background: rgba(236, 72, 153, 0.08);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.15);
+}
 
 @media (max-width: 860px) {
   h1 { font-size: 32px; }
@@ -503,7 +532,10 @@ footer {
   </div>
 </main>
 
-<footer>APACHE 2.0 &middot; PART OF THE GROK-INSTALL FAMILY</footer>
+<footer>
+  <button class="btn btn-danger" id="clearDataBtn" type="button" style="margin-bottom:16px;">Clear all data</button>
+  <div>APACHE 2.0 &middot; PART OF THE GROK-INSTALL FAMILY</div>
+</footer>
 
 <script>
 (function(){
@@ -795,6 +827,15 @@ footer {
   buildFlagCards();
   setMode(state.mode);
   draftEl.addEventListener("input", scheduleRender);
+  var clearDataBtn = document.getElementById("clearDataBtn");
+  if (clearDataBtn) {
+    clearDataBtn.addEventListener("click", function () {
+      if (confirm("Clear all data? This will wipe your draft and every saved keyword list. This cannot be undone.")) {
+        localStorage.clear();
+        location.reload();
+      }
+    });
+  }
   render();
 })();
 </script>

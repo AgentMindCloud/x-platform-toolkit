@@ -72,7 +72,8 @@ Load from Google Fonts:
 
 ## Iconography
 
-- **No emojis.** Anywhere. UI, docs, commits.
+- **No emojis** in UI copy, tool docs, commit messages, issue templates, or anywhere outside the root `README.md`.
+- The one exception: the root `README.md` may use emojis in section headers only (e.g. `### 📊 Analytics`), as visual wayfinding for GitHub's rendered landing page. Body copy, tables, and code blocks stay emoji-free.
 - Use SVG icons or geometric unicode: `▲ ▼ ◆ ◇ ● ○ → ← ↗ ⚡ ⌘ §`
 - Status indicators: small SVG dots (8px) with neon fill + glow
 
@@ -119,7 +120,7 @@ Load from Google Fonts:
 - Light themes, off-white backgrounds, or low-contrast grays
 - Rounded pill badges, rounded buttons > 8px
 - Bootstrap, Material Design, or recognizable framework aesthetics
-- Emojis in UI, docs, or commits
+- Emojis in UI copy, tool docs, commit messages, issue templates, or root README body (section headers only are allowed)
 
 ---
 

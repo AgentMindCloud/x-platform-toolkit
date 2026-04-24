@@ -550,6 +550,7 @@
   </main>
 
   <footer style="border-top:1px solid var(--border-subtle); padding:24px; text-align:center; margin-top:64px;">
+    <button class="btn btn-danger" id="clear-data-btn" type="button" style="margin-bottom:16px;">Clear all data</button>
     <p class="text-muted mono" style="font-size:12px; letter-spacing:0.1em;">APACHE 2.0  ·  PART OF THE GROK-INSTALL FAMILY</p>
   </footer>
 
@@ -887,6 +888,16 @@
       els.clearBtn.addEventListener('click', clearAll);
       els.exportBtn.addEventListener('click', exportCSV);
       els.table.querySelector('thead').addEventListener('click', onSortClick);
+
+      var clearDataBtn = document.getElementById('clear-data-btn');
+      if (clearDataBtn) {
+        clearDataBtn.addEventListener('click', function () {
+          if (confirm('Clear all data? This will wipe every saved post and comparison. This cannot be undone.')) {
+            localStorage.clear();
+            location.reload();
+          }
+        });
+      }
 
       [els.postName, els.impressions, els.likes, els.replies, els.reposts, els.bookmarks].forEach(function (el) {
         el.addEventListener('keydown', function (ev) {
