@@ -17,7 +17,7 @@
 
 </div>
 
-<div align="center">[ <a href="#tools">Tools</a> ] [ <a href="docs/PHILOSOPHY.md">Philosophy</a> ] [ <a href="docs/ARCHITECTURE.md">Architecture</a> ] [ <a href="docs/ROADMAP.md">Roadmap</a> ] [ <a href="CONTRIBUTING.md">Contribute</a> ]</div>
+<div align="center">[ <a href="#tools">Tools</a> ] [ <a href="docs/PHILOSOPHY.md">Philosophy</a> ] [ <a href="docs/ARCHITECTURE.md">Architecture</a> ] [ <a href="docs/BRAND.md">Brand</a> ] [ <a href="docs/ROADMAP.md">Roadmap</a> ] [ <a href="CHANGELOG.md">Changelog</a> ] [ <a href="CONTRIBUTING.md">Contribute</a> ]</div>
 
 ---
 
@@ -41,7 +41,7 @@ X has 600M+ users and a public API. Yet the platform itself ships only ~10% of t
 | 10 | [Cross-Account Niche Benchmarker](tools/10-cross-account-niche-benchmarker/) | Analytics | `Spec'd` | Node + X API |
 | 11 | [Ghostwriter Mode with Memory](tools/11-ghostwriter-mode-with-memory/) | AI Writing | `Spec'd` | Node + Grok |
 | 12 | [Controversy Detector](tools/12-controversy-detector/) | AI Analytics | `Live` | Vanilla JS |
-| 13 | [Thread-to-Newsletter Converter](tools/13-thread-to-newsletter-converter/) | Automation | `Spec'd` | Node + Grok |
+| 13 | [Thread-to-Newsletter Converter](tools/13-thread-to-newsletter-converter/) <!-- TODO: verify still supported (tool README titles it "Thread-to-Newsletter Auto-Converter") --> | Automation | `Spec'd` | Node + Grok |
 | 14 | [Warm Introduction Mapper](tools/14-warm-introduction-mapper/) | Network | `Spec'd` | Node + X API |
 | 15 | [Spaces Recorder + Clips](tools/15-spaces-recorder-clips/) | Media | `Spec'd` | Node + FFmpeg |
 | 16 | [Follower Migration Assistant](tools/16-follower-migration-assistant/) | Analytics | `Spec'd` | Node + Grok |
@@ -63,6 +63,16 @@ Every LIVE tool is a single HTML file. No build step. No dependencies beyond a C
 ## Architecture
 
 A monorepo of numbered tool folders, a shared UI kit, and thin API clients for X and Grok. LIVE tools ship as single-file HTML; backend-driven tools are plain Node. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+### Shared packages
+
+| Package | Purpose | Env |
+|---|---|---|
+| [shared/ui-kit](shared/ui-kit/) | Design tokens, components, shell template | — |
+| [shared/x-api-client](shared/x-api-client/) | X API v2 wrapper (Node ≥18) | `X_BEARER_TOKEN` |
+| [shared/grok-client](shared/grok-client/) | xAI Grok API wrapper (Node ≥18), defaults to `grok-2-latest` | `XAI_API_KEY` |
+
+Visual system lives in [docs/BRAND.md](docs/BRAND.md).
 
 ## Philosophy
 
