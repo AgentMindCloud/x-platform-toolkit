@@ -26,8 +26,8 @@
   "overrides": [
     {
       "files": [
-        "shared/grok-client/browser.js",
-        "shared/x-api-client/browser.js",
+        "shared/grok-client/browser.mjs",
+        "shared/x-api-client/browser.mjs",
         "shared/test-utils/**/*.js"
       ],
       "parserOptions": { "sourceType": "module" },

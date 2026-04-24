@@ -1,6 +1,7 @@
 {
   "ignorePatterns": [
     { "pattern": "^mailto:" },
+    { "pattern": "^https?://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d+)?(/|$)" },
     { "pattern": "^https://img\\.shields\\.io/" },
     { "pattern": "^https://capsule-render\\.vercel\\.app/" },
     { "pattern": "^https://readme-typing-svg\\.demolab\\.com" },

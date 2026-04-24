@@ -2,6 +2,8 @@
 
 Category: AI Writing
 
+Status: Spec'd → Scaffold (no implementation yet)
+
 > Write threads grounded in what's actually happening on X right now.
 
 ![Status](https://img.shields.io/badge/Status-Spec'd-52525b?style=for-the-badge&labelColor=000000)
@@ -25,6 +27,24 @@ Grok has native X access — that's xAI's unique advantage. No other LLM knows w
 ## Install
 
 This tool is currently in the design phase. See [SPEC.md](./SPEC.md) for full implementation plan.
+
+## Run locally
+
+The scaffold lives under `src/` and references the shared `ui-kit` via absolute `/shared/**` paths, so the dev server must serve from the repo root. The `dev` script handles that for you:
+
+```bash
+cd tools/19-grok-thread-composer
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173/tools/19-grok-thread-composer/src/ in a browser. You'll see the scaffolded shell — the composer UI itself is not implemented yet.
+
+To run the smoke test for this workspace only:
+
+```bash
+npm test
+```
 
 ## License
 

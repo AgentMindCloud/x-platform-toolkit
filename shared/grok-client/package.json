@@ -7,7 +7,7 @@
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
-    "./browser": "./browser.js"
+    "./browser": "./browser.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.js"
