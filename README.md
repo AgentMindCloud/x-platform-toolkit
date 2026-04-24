@@ -138,6 +138,8 @@ open index.html
 
 **Every LIVE tool is a single HTML file.** No build step. No dependencies beyond a CDN for charting where needed. Open it, use it, ship it.
 
+> Spec'd tools ship with a `SPEC.md` instead of an `index.html` — they're designed but not yet runnable. See the status column in the table above.
+
 ## ✦ Architecture
 
 ```mermaid
