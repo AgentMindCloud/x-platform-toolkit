@@ -1,3 +1,9 @@
+---
+title: "05 · Pinned Post A/B Rotator — x-platform-toolkit"
+description: "Rotate your pinned post on a schedule. Find your best converter."
+image: /docs/posters/og-tool-05-pinned-post-ab-rotator.png
+---
+
 # 05 · Pinned Post A/B Rotator
 
 Category: Analytics

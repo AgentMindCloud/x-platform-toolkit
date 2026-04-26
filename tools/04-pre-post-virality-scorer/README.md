@@ -1,3 +1,9 @@
+---
+title: "04 · Pre-Post Virality Scorer — x-platform-toolkit"
+description: "Score your draft post before you hit send."
+image: /docs/posters/og-tool-04-pre-post-virality-scorer.png
+---
+
 # 04 · Pre-Post Virality Scorer
 
 Category: Analytics

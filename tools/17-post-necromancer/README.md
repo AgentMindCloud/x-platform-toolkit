@@ -1,3 +1,9 @@
+---
+title: "17 · Post Necromancer — x-platform-toolkit"
+description: "Your old posts had good ideas. Reincarnate them with today's vocabulary."
+image: /docs/posters/og-tool-17-post-necromancer.png
+---
+
 # 17 · Post Necromancer
 
 Category: AI Automation

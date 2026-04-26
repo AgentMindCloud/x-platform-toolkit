@@ -1,3 +1,9 @@
+---
+title: "13 · Thread-to-Newsletter Auto-Converter — x-platform-toolkit"
+description: "Your thread is half a newsletter. Let's finish the job."
+image: /docs/posters/og-tool-13-thread-to-newsletter-converter.png
+---
+
 # 13 · Thread-to-Newsletter Auto-Converter
 
 Category: Automation

@@ -1,3 +1,9 @@
+---
+title: "11 · Ghostwriter Mode with Memory — x-platform-toolkit"
+description: "AI writer that learns your voice from your last 500 posts."
+image: /docs/posters/og-tool-11-ghostwriter-mode-with-memory.png
+---
+
 # 11 · Ghostwriter Mode with Memory
 
 Category: AI Writing

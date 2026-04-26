@@ -1,3 +1,9 @@
+---
+title: "08 · Follow/Unfollow Velocity Map — x-platform-toolkit"
+description: "Timeline chart of every follow and unfollow, mapped to what you posted."
+image: /docs/posters/og-tool-08-follow-unfollow-velocity-map.png
+---
+
 # 08 · Follow/Unfollow Velocity Map
 
 Category: Analytics

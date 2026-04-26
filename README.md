@@ -1,3 +1,9 @@
+---
+title: "x-platform-toolkit"
+description: "20 open-source tools filling the gaps X (Twitter) never built — analytics, AI writing, monetization, automation. Apache 2.0, self-hostable, ToS-respecting."
+image: /docs/posters/og-default.png
+---
+
 <!-- NEON / CYBERPUNK REPO TEMPLATE · X-PLATFORM-TOOLKIT -->
 
 <p align="center">

@@ -37,5 +37,11 @@ Thumbs.db
 *.swp
 *.swo
 
+# Jekyll (GitHub Pages local builds)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
 # Claude Code
 .claude/

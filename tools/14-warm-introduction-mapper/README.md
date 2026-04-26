@@ -1,3 +1,9 @@
+---
+title: "14 · Warm Introduction Mapper — x-platform-toolkit"
+description: "Find the shortest follow chain to anyone on X."
+image: /docs/posters/og-tool-14-warm-introduction-mapper.png
+---
+
 # 14 · Warm Introduction Mapper
 
 Category: Network

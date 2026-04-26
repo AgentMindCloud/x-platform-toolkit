@@ -1,3 +1,9 @@
+---
+title: "03 · Contextual Reply Suggester — x-platform-toolkit"
+description: "Reply suggestions ranked by likelihood of follower gain."
+image: /docs/posters/og-tool-03-contextual-reply-suggester.png
+---
+
 # 03 · Contextual Reply Suggester
 
 Category: AI Writing

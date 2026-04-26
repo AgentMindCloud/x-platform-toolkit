@@ -1,3 +1,9 @@
+---
+title: "06 · Digital Product Storefront — x-platform-toolkit"
+description: "Sell digital products from your X bio link in 2 minutes."
+image: /docs/posters/og-tool-06-digital-product-storefront.png
+---
+
 # 06 · Digital Product Storefront
 
 Category: Monetization

@@ -1,3 +1,9 @@
+---
+title: "16 · Follower Migration Assistant — x-platform-toolkit"
+description: "Pivoting your account? See who'll stay and who'll leave."
+image: /docs/posters/og-tool-16-follower-migration-assistant.png
+---
+
 # 16 · Follower Migration Assistant
 
 Category: Analytics

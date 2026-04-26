@@ -1,3 +1,9 @@
+---
+title: "10 · Cross-Account Niche Benchmarker — x-platform-toolkit"
+description: "Stop wondering if your numbers are good. See how you stack against your niche."
+image: /docs/posters/og-tool-10-cross-account-niche-benchmarker.png
+---
+
 # 10 · Cross-Account Niche Benchmarker
 
 Category: Analytics

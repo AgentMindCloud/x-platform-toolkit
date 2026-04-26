@@ -1,3 +1,9 @@
+---
+title: "18 · Emotional Tone Trend Tracker — x-platform-toolkit"
+description: "What's the emotional fingerprint of your X account?"
+image: /docs/posters/og-tool-18-emotional-tone-trend-tracker.png
+---
+
 # 18 · Emotional Tone Trend Tracker
 
 Category: Analytics

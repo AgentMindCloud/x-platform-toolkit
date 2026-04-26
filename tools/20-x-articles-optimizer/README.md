@@ -1,3 +1,9 @@
+---
+title: "20 · X Articles Optimizer — x-platform-toolkit"
+description: "Your best thread is a half-written X Article. Let's complete it."
+image: /docs/posters/og-tool-20-x-articles-optimizer.png
+---
+
 # 20 · X Articles Optimizer
 
 Category: AI Writing

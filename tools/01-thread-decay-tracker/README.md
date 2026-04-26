@@ -1,3 +1,9 @@
+---
+title: "01 · Thread Decay Tracker — x-platform-toolkit"
+description: "See which of your threads are still earning impressions days after you posted them."
+image: /docs/posters/og-tool-01-thread-decay-tracker.png
+---
+
 # 01 · Thread Decay Tracker
 
 Category: Analytics

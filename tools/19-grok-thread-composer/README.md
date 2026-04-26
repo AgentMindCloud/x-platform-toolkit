@@ -1,3 +1,9 @@
+---
+title: "19 · Grok Thread Composer — x-platform-toolkit"
+description: "Write threads grounded in what's actually happening on X right now."
+image: /docs/posters/og-tool-19-grok-thread-composer.png
+---
+
 # 19 · Grok Thread Composer
 
 Category: AI Writing

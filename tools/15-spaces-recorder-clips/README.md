@@ -1,3 +1,9 @@
+---
+title: "15 · Spaces Recorder + Clips — x-platform-toolkit"
+description: "Spaces shouldn't disappear. Record, transcribe, clip — automated."
+image: /docs/posters/og-tool-15-spaces-recorder-clips.png
+---
+
 # 15 · Spaces Recorder + Clips
 
 Category: Media

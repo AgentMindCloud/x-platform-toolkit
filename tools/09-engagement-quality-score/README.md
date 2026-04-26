@@ -1,3 +1,9 @@
+---
+title: "09 · Engagement Quality Score — x-platform-toolkit"
+description: "Weight your engagement properly. Replies are gold. Likes are dust."
+image: /docs/posters/og-tool-09-engagement-quality-score.png
+---
+
 # 09 · Engagement Quality Score
 
 Category: AI Writing

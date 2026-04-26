@@ -1,3 +1,9 @@
+---
+title: "02 · Follower Intent Classifier — x-platform-toolkit"
+description: "Stop counting followers. Start understanding why they followed you."
+image: /docs/posters/og-tool-02-follower-intent-classifier.png
+---
+
 # 02 · Follower Intent Classifier
 
 Category: Analytics

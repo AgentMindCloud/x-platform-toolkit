@@ -1,3 +1,9 @@
+---
+title: "07 · Content Compound Calculator — x-platform-toolkit"
+description: "See your true cumulative reach over 12 months. Not just one-day impressions."
+image: /docs/posters/og-tool-07-content-compound-calculator.png
+---
+
 # 07 · Content Compound Calculator
 
 Category: Analytics

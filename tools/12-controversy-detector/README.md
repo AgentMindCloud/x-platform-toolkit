@@ -1,3 +1,9 @@
+---
+title: "12 · Controversy Detector — x-platform-toolkit"
+description: "Flag risky phrasing before you post. Choose your battles."
+image: /docs/posters/og-tool-12-controversy-detector.png
+---
+
 # 12 · Controversy Detector
 
 Category: AI Writing

@@ -1,0 +1,37 @@
+title: x-platform-toolkit
+description: 20 open-source tools filling the gaps X (Twitter) never built — analytics, AI writing, monetization, automation. Apache 2.0, self-hostable, ToS-respecting.
+url: https://agentmindcloud.github.io
+baseurl: /x-platform-toolkit
+
+twitter:
+  username: agentmindcloud
+  card: summary_large_image
+
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /docs/posters/og-default.png
+
+exclude:
+  - node_modules
+  - scripts
+  - shared/test-utils
+  - "*.lock"
+  - package-lock.json
+  - .github
+  - .eslintrc.json
+  - .prettierrc
+  - .prettierignore
+  - .stylelintrc.json
+  - .htmlvalidate.json
+  - .markdown-link-check.json
+  - .editorconfig
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md
+  - LICENSE
